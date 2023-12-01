@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "util.h"
+#include "sdie.h"
 
 void
 die(const char *fmt, ...)
