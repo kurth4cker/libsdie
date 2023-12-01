@@ -6,10 +6,15 @@
 
 #include "sdie.h"
 
+const char *argv0;
+
 void
 die(const char *fmt, ...)
 {
 	va_list ap;
+
+	if (argv0)
+		fprintf(stderr, "%s: ", argv0);
 
 	va_start(ap, fmt);
 	vfprintf(stderr, fmt, ap);
