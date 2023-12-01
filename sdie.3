@@ -1,0 +1,61 @@
+.Dd Nov 12, 2023
+.Dt SDIE 3
+.Os
+.
+.Sh NAME
+.Nm die
+.Nd suckless's error reporting function as library
+.
+.Sh SYNOPSIS
+.In sdie.h
+.Vt extern const char *argv0 ;
+.Ft void
+.Fo die
+.Fa "const char *fmt"
+.Fa "..."
+.Fc
+.
+.Sh DESCRIPTION
+With
+.Va argv0
+and
+.Fn die
+you can report error and exit easily in your C programs.
+.Pp
+If
+.Fa fmt
+ends with ':' character,
+.Fn die
+also call's
+.Xr perror 3
+for POSIX
+.Xr errno 3
+reporting.
+.Pp
+If
+.Va fmt
+does not end with ':',
+.Fn die
+does not put a newline.
+.
+.Sh RETURN VALUES
+The
+.Fn die
+does not return. It terminates process with
+.Xr exit 3 .
+.
+.Sh SEE ALSO
+.Xr err 3 ,
+.Xr errno 3 ,
+.Xr error 3 ,
+.Xr exit 3 ,
+.Xr perror 3
+.Pp
+.Lk https://git.suckless.org/libsl "Suckless libsl"
+.
+.Sh AUTHORS
+Originally implemented by/at
+.Lk https://suckless.org Suckless .
+.Pp
+Current maintainer is
+.An kurth4cker Aq Mt kurth4cker@tutanota.com .
