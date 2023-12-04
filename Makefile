@@ -11,9 +11,9 @@ INCLUDEDIR = $(PREFIX)/include
 MANDIR = $(PREFIX)/share/man
 
 LIB = libsdie.a
-OBJ = sdie.o
+OBJ = die.o
 
-SRC = sdie.c
+SRC = die.c
 HDR = sdie.h
 MAN3 = sdie.3
 
