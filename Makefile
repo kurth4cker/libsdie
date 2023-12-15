@@ -17,7 +17,7 @@ SRC = die.c
 HDR = sdie.h
 MAN3 = sdie.3
 
-DISTFILES = LICENSE README Makefile $(SRC) $(HDR) $(MAN3)
+DISTFILES = LICENSE README.md Makefile $(SRC) $(HDR) $(MAN3)
 DISTNAME = libsdie-$(VERSION)
 
 all: $(LIB)
@@ -51,4 +51,4 @@ uninstall:
 
 .SUFFIXES: .c .o
 .c.o:
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $<
+	$(CC) $(CFLAGS) -c $<
