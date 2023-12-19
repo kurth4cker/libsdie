@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <errno.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,10 +23,9 @@ die(const char *fmt, ...)
 
 	if (fmt[0] && fmt[strlen(fmt)-1] == ':') {
 		fputc(' ', stderr);
-		perror(NULL);
-	} else {
-		fputc('\n', stderr);
+		fputs(strerror(errno), stderr);
 	}
+	fputc('\n', stderr);
 
-	exit(1);
+	exit(EXIT_FAILURE);
 }
