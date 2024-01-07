@@ -28,12 +28,12 @@ $(LIB): $(OBJ)
 	$(RANLIB) $@
 
 clean:
-	rm -f $(LIB) *.o
+	rm -f $(LIB) *.o $(DISTNAME).tar.gz
 
 dist: $(DISTFILES)
 	mkdir -p $(DISTNAME)
 	cp -f $(DISTFILES) $(DISTNAME)
-	tar -cf $(DISTNAME).tar $(DISTNAME)
+	tar -c $(DISTNAME) | gzip -c > $(DISTNAME).tar.gz
 	rm -rf $(DISTNAME)
 
 install: $(LIB) $(HDR) $(MAN3)
