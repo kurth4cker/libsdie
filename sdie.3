@@ -1,4 +1,4 @@
-.Dd Nov 12, 2023
+.Dd Feb 25, 2024
 .Dt SDIE 3
 .Os
 .
@@ -8,16 +8,19 @@
 .
 .Sh SYNOPSIS
 .In sdie.h
-.Vt extern const char *argv0 ;
 .Ft void
 .Fo die
 .Fa "const char *fmt"
 .Fa "..."
 .Fc
+.Ft void
+.Fo die_set_progname
+.Fa "const char *name"
+.Fc
 .
 .Sh DESCRIPTION
 With
-.Va argv0
+.Fn die_set_progname
 and
 .Fn die
 you can report error and exit easily in your C programs.
@@ -37,6 +40,13 @@ If
 does not end with ':',
 .Fn die
 does not put a newline.
+.
+.Pp
+.Fn die_set_progname
+sets program name.
+So
+.Fn die
+can use it for printing error messages.
 .
 .Sh RETURN VALUES
 The

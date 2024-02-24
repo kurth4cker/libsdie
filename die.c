@@ -7,7 +7,7 @@
 
 #include "sdie.h"
 
-const char *argv0;
+static const char *argv0;
 
 void
 die(const char *fmt, ...)
@@ -28,4 +28,10 @@ die(const char *fmt, ...)
 	fputc('\n', stderr);
 
 	exit(EXIT_FAILURE);
+}
+
+void
+die_set_progname(const char *str)
+{
+	argv0 = str;
 }
