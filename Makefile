@@ -1,5 +1,5 @@
 .POSIX:
-VERSION = 0.1.0a
+VERSION = 0.1.0a-git
 
 CC = cc
 AR = ar
@@ -11,9 +11,9 @@ INCLUDEDIR = $(PREFIX)/include
 MANDIR = $(PREFIX)/share/man
 
 LIB = libsdie.a
-OBJ = die.o
+OBJ = sdie.o
 
-SRC = die.c
+SRC = sdie.c
 HDR = sdie.h
 MAN3 = sdie.3
 
