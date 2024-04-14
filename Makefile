@@ -5,6 +5,8 @@ CC = cc
 AR = ar
 RANLIB = ranlib
 
+CFLAGS = -std=c99 -pedantic -Wall -Wextra -Werror -g
+
 PREFIX = /usr/local
 LIBDIR = $(PREFIX)/lib
 INCLUDEDIR = $(PREFIX)/include
