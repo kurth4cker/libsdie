@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+
 #include <errno.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -7,7 +8,7 @@
 
 #include "sdie.h"
 
-static const char *argv0;
+const char *argv0;
 
 void
 die(const char *fmt, ...)
@@ -28,10 +29,4 @@ die(const char *fmt, ...)
 	fputc('\n', stderr);
 
 	exit(EXIT_FAILURE);
-}
-
-void
-die_set_progname(const char *str)
-{
-	argv0 = str;
 }
